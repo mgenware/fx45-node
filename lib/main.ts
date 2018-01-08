@@ -1,4 +1,5 @@
 import * as fss from 'fs-syncx';
+import * as nodepath from 'path';
 
 function mainInternal(directory: string, ignoreMap: { [key: string]: boolean }): object|null {
   const res: { [key: string]: string|object } = {};
@@ -27,6 +28,10 @@ function mainInternal(directory: string, ignoreMap: { [key: string]: boolean }):
 }
 
 export default function objectFromDirectory(directory: string, ignoredFiles: string[]|null = null): object|null {
+  const path = nodepath.resolve(directory);
+  if (!fss.dirExists(path)) {
+    throw new Error(`The directory "${path}" does not exist`);
+  }
   const ignoreMap: { [key: string]: boolean } = {};
   if (ignoredFiles && ignoredFiles.length) {
     for (const file of ignoredFiles) {
@@ -34,5 +39,5 @@ export default function objectFromDirectory(directory: string, ignoredFiles: str
     }
   }
 
-  return mainInternal(directory, ignoreMap);
+  return mainInternal(path, ignoreMap);
 }
