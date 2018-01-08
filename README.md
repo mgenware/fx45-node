@@ -6,6 +6,10 @@
 
 Generate JSON files for [fx54-node](https://github.com/mgenware/fx54-node).
 
+The packages names may be slightly confusing:
+* `fx54-node` Verify existence or content of files in a hierarchical object.
+* `fx45-node` Generate JSON files for [fx54-node](https://github.com/mgenware/fx54-node).
+
 ## Installation
 ```sh
 yarn add fx45-node
