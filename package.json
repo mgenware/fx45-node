@@ -1,6 +1,6 @@
 {
   "name": "fx45-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate JSON files for fx54-node",
   "main": "dist/lib/main.js",
   "types": "dist/lib/main.d.ts",

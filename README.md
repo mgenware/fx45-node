@@ -7,7 +7,7 @@
 Generate JSON files for [fx54-node](https://github.com/mgenware/fx54-node).
 
 The packages names may be slightly confusing:
-* `fx54-node` Verify existence or content of files in a hierarchical object.
+* `fx54-node` Verify the existence or content of files in a hierarchical object.
 * `fx45-node` Generate JSON files for [fx54-node](https://github.com/mgenware/fx54-node).
 
 ## Installation
@@ -21,7 +21,7 @@ yarn test
 ```
 
 ## Example
-Directory structure:
+Assume a directory with following structure:
 ```
 - root
   - dir1
@@ -33,6 +33,7 @@ Directory structure:
 Code:
 ```javascript
 import objectFromDirectory from 'fx45-node';
+// or Node.js style: const objectFromDirectory = require('fx45-node').default;
 
 console.log(JSON.stringify(objectFromDirectory('./root')));
 ```
@@ -51,6 +52,8 @@ Output:
 
 ## API
 ```javascript
+import objectFromDirectory from 'fx45-node';
+
 objectFromDirectory(directory: string, ignoredFiles: string[]|null = null): object|null
 ```
 
